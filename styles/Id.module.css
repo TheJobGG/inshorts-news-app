@@ -44,6 +44,7 @@
 .readMore {
     text-align: center;
     margin-top: 2rem;
+    padding-top: 1rem;
     border-top: 1px dashed var(--light);
 }
 
@@ -59,8 +60,6 @@
     transition: text-decoration 100ms ease-out;
 
 }
-
-
 
 @media screen and (min-width:750px) {
     .description {
@@ -84,5 +83,6 @@
         text-align: center;
         margin: auto;
         padding: 0 2rem;
+        padding-top: 1rem;
     }
 }
