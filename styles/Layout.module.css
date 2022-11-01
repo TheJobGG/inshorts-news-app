@@ -1,0 +1,43 @@
+/* Header styles */
+.header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+}
+
+@media screen and (min-width: 750px) {
+    .header{
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 1rem;
+    }
+}
+
+
+/* Footer styles */
+.footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 0.5rem;
+    margin: 0 5px;
+    border-top: 1px solid #808080;
+    transition: border-top 150ms ease-in;
+}
+
+.footer:hover {
+    border-top: 1px solid #eaeaea;
+    transition: border-top 150ms ease-out;
+}
+
+.footer a{
+    transition: color 150ms ease-in;
+}
+.footer a:hover,
+.footer a:focus,
+.footer a:active {
+    color: #0070f3;
+    transition: color 150ms ease-out;
+}
