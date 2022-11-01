@@ -12,35 +12,29 @@ export default function Home({ response }) {
   return (
     <Layout>
       <main className={styles.main}>
-        <h2>
+        <h2 className={styles.title}>
           {category == 'all'
             ? `Most recently news`
             : `All about ${category}`}
         </h2>
-        {/* <h2> title of news </h2> */}
         {news.length === 0
           ? <p>Parece que sucedió un error...</p>
           :
-          <div className={styles.container}>
+          <div className={styles.newsContainer}>
             {news.map(item => {
               const { author, content, date, id, imageUrl, readMoreUrl, time, title, url } = item
               return <div key={id} className={styles.card}>
                 <Image
                   src={imageUrl}
                   alt={'image about ' + title}
-                  width={700}
-                  height={475}
-                  sizes="100vw"
-                  style={{
-                    width: '100%',
-                    height: 'auto',
-                    maxHeight: '250px',
-                    objectFit: 'cover',
-                    objectPosition: 'center'
-                  }}
+                  width={0}
+                  height={0}
+                  sizes="50vw"
                 />
-                <span style={styles.date}>{date}</span>
+                <span className={styles.date}>{date} - {time}</span>
                 <h3>{title}</h3>
+                <p className={styles.description}>{content}</p>
+                <span className={styles.author}>{author}</span>
               </div>
             })}
           </div>
@@ -52,7 +46,7 @@ export default function Home({ response }) {
 
 
 export async function getServerSideProps() {
-  const API_URL = 'https://inshorts.deta.dev/news?category=startup'
+  const API_URL = 'https://inshorts.deta.dev/news?category=all'
   let news;
   const fetchResponse = await fetch(`${API_URL}`)
   const response = await fetchResponse.json()
