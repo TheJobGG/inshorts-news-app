@@ -1,5 +1,5 @@
 :root {
-  --light-red: #ff8080;
+  --light-red: #e60000;
   --dark: #eaeaea;
   --light: #222;
 
@@ -44,6 +44,7 @@ body {
   :root {
     --light: #eaeaea;
     --dark: #222;
+    --light-red: #ff8080;
   }
 
   body {
