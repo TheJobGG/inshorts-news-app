@@ -3,6 +3,7 @@ import Image from "next/image"
 import Link from "next/link"
 
 import Layout from "../../components/Layout"
+import BackHistory from "../../components/BackHistory"
 import styles from '../../styles/Id.module.css'
 
 export default function Id() {
@@ -28,12 +29,12 @@ export default function Id() {
               sizes="50vw"
             />
             <div className={styles.contentText}>
-
               <p className={styles.description}>{content}</p>
               <p className={styles.author}>{author}</p>
-              <p className={styles.readMore}>If you want to read the complete new go to <Link href={readMoreUrl} target='_blank'>this site</Link></p>
+              <p className={styles.readMore}>If you want to read the complete note, you can go to <Link href={readMoreUrl} target='_blank'>this site</Link></p>
             </div>
           </div>
+        <BackHistory />
         </div>
       </Layout>
     </>
