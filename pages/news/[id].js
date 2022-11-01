@@ -10,7 +10,15 @@ export default function Id() {
   const router = useRouter()
   const data = router.query
 
-  const { author, content, date, id, imageUrl, readMoreUrl, time, title, url } = data
+  const { 
+    author = '', 
+    content = '', 
+    date = '', 
+    imageUrl = '', 
+    readMoreUrl = '', 
+    time = '', 
+    title = '', 
+    } = data
 
   // Simply to add space after the comma
   const formatDate = date.replace(',', ', ')
@@ -34,7 +42,7 @@ export default function Id() {
               <p className={styles.readMore}>If you want to read the complete note, you can go to <Link href={readMoreUrl} target='_blank'>this site</Link></p>
             </div>
           </div>
-        <BackHistory />
+          <BackHistory />
         </div>
       </Layout>
     </>
