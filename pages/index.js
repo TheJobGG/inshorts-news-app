@@ -1,5 +1,7 @@
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import styles from '../styles/Home.module.css'
 
 import Layout from '../components/Layout';
@@ -22,8 +24,15 @@ export default function Home({ response }) {
           :
           <div className={styles.newsContainer}>
             {news.map(item => {
-              const { author, content, date, id, imageUrl, readMoreUrl, time, title, url } = item
-              return <div key={id} className={styles.card}>
+              const { author, content, date, id, imageUrl, time, title } = item
+
+              return <Link
+                href={{
+                  pathname: `/news/${id}`,
+                  query: item
+                }}
+                key={id}
+                className={styles.card}>
                 <Image
                   src={imageUrl}
                   alt={'image about ' + title}
@@ -35,7 +44,7 @@ export default function Home({ response }) {
                 <h3>{title}</h3>
                 <p className={styles.description}>{content}</p>
                 <span className={styles.author}>{author}</span>
-              </div>
+              </Link>
             })}
           </div>
         }
