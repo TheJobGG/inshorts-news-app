@@ -18,12 +18,12 @@ export default function MainContent({ category, news }) {
         <div className={styles.newsContainer}>
           {news.map(item => {
             const { author, content, date, id, imageUrl, time, title } = item
-
             return <Link
               href={{
+                query: item,
                 pathname: `/news/${id}`,
-                query: item
               }}
+              as={`/news/${id}`}
               key={id}
               className={styles.card}>
               <Image
